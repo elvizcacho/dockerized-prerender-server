@@ -1,0 +1,15 @@
+{
+  "name": "prerender-docker",
+  "version": "1.0.0",
+  "description": "dockerize prerender server",
+  "main": "index.js",
+  "scripts": {
+    "test": "npm test",
+    "start": "node src/server.js"
+  },
+  "author": "Sebastian Vizcaino",
+  "license": "ISC",
+  "dependencies": {
+    "prerender": "^5.1.0"
+  }
+}
