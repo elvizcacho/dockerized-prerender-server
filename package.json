@@ -10,6 +10,6 @@
   "author": "Sebastian Vizcaino",
   "license": "ISC",
   "dependencies": {
-    "prerender": "^5.1.0"
+    "prerender": "git@github.com:elvizcacho/prerender.git"
   }
 }
