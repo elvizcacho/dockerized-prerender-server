@@ -8,6 +8,8 @@ RUN apk add --no-cache git
 
 RUN apk add --update nodejs 
 
+RUN apk add openssh
+
 # add chromium
 RUN apk update && apk upgrade && apk add --no-cache \
     zlib-dev \
@@ -19,14 +21,14 @@ RUN apk update && apk upgrade && apk add --no-cache \
     ttf-freefont \
     mesa-dri-swrast
 
-RUN mkdir -p /usr/src/app
+RUN mkdir -p /usr/src/app && mkdir ~/.ssh
 WORKDIR /usr/src/app
+
+RUN ssh-keyscan github.com >> ~/.ssh/known_hosts
 
 COPY . /usr/src/app
 
 ENV PATH="/usr/src/app:$PATH"
-#RUN mv /usr/bin/chromium-browser /usr/bin/google-chrome
-
 
 ENTRYPOINT ["/usr/src/app/entrypoint.sh"]
 
