@@ -1,5 +1,9 @@
 FROM alpine:edge
 
+ARG PORT=3000
+
+ENV PORT=$PORT
+
 # update sources and upgrade packages
 RUN apk update && apk upgrade && rm -rf /var/cache/apk/*
 
